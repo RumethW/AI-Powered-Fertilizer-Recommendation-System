@@ -2,3 +2,5 @@ fastapi
 pandas
 joblib
 shap
+numpy
+scikit-learn
