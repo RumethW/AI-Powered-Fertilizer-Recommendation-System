@@ -37,7 +37,7 @@ button {
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: 520px;
+  height: 490px;
   overflow: hidden;
   background: #064e3b;
 }
@@ -322,4 +322,308 @@ button {
   border-radius: 20px;
 
   background: #86efac;
+}
+
+/* Main Container */
+.container {
+  width: min(1120px, calc(100% - 40px));
+
+  margin: 45px auto 70px;
+}
+
+
+/* Form */
+.fertilizer-form {
+  display: grid;
+  gap: 20px;
+}
+
+.fertilizer-form-section {
+  padding: 32px;
+
+  border: 1px solid #e1e9e3;
+  border-radius: 24px;
+
+  background: white;
+
+  box-shadow:
+    0 15px 40px rgba(16, 45, 27, 0.07);
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-badge {
+  display: inline-block;
+
+  margin: 0 0 10px;
+
+  color: #16a34a;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.form-header h2 {
+  margin: 0 0 8px;
+
+  color: #17251c;
+
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -0.03em;
+}
+
+.form-header > p:last-child {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #718077;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Form Cards */
+.form-card {
+  padding: 28px;
+
+  border: 1px solid #e5ebe6;
+  border-radius: 20px;
+
+  background: #fbfdfb;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-card:hover {
+  border-color: #cce5d3;
+
+  box-shadow:
+    0 8px 25px rgba(22, 101, 52, 0.05);
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.card-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  background: #eaf8ee;
+
+  font-size: 21px;
+}
+
+.card-heading h3 {
+  margin: 1px 0 5px;
+
+  color: #17251c;
+
+  font-size: 19px;
+}
+
+.card-heading p {
+  margin: 0;
+
+  color: #78847c;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* Form grid  */
+.form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.form-grid.three-columns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.input-group {
+  min-width: 0;
+}
+
+.input-group label,
+.location-search label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #344139;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.input-group input,
+.input-group select,
+.location-search input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d7e0d9;
+  border-radius: 11px;
+
+  background: white;
+
+  color: #17251c;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-group input::placeholder,
+.location-search input::placeholder {
+  color: #a2ada5;
+}
+
+.input-group input:hover,
+.input-group select:hover,
+.location-search input:hover {
+  border-color: #b8c9bc;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.location-search input:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.10);
+}
+
+
+/* Optional Card */
+.optional-card {
+  background:
+    linear-gradient(
+      135deg,
+      #fcfdfc,
+      #f5faf6
+    );
+}
+
+
+/* Location */
+.location-selector {
+  display: grid;
+  gap: 20px;
+}
+
+.location-methods {
+  display: grid;
+  gap: 16px;
+}
+
+.location-search-row {
+  display: flex;
+  gap: 10px;
+}
+
+.location-search-button,
+.current-location-button {
+  border-radius: 11px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.location-search-button {
+  min-width: 105px;
+
+  padding: 0 18px;
+
+  border: 0;
+
+  background: #166534;
+
+  color: white;
+}
+
+.location-search-button:hover {
+  background: #14532d;
+}
+
+.location-search-button:disabled,
+.current-location-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.current-location-button {
+  justify-self: start;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 12px 17px;
+
+  border: 1px solid #b9ddc2;
+
+  background: white;
+
+  color: #166534;
+}
+
+.current-location-button:hover {
+  background: #f0fdf4;
+}
+
+/* Footer */
+.footer {
+  padding: 20px   20px;
+
+  background: #0b542c;
+
+  color: white;
+
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-text {
+  margin-top: 6px !important;
+
+  color: #9fc9aa;
+
+  font-size: 12px;
 }
