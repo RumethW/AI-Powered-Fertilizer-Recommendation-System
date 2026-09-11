@@ -17,19 +17,19 @@ export default function FertilizerForm({
   const [location, setLocation] = useState<LocationData | null>(null);
 
   const [formData, setFormData] = useState({
-    Soil_Type: "Clay",
-    Soil_pH: "6.5",
-    Soil_Moisture: "35",
-    Organic_Carbon: "0.5",
-    Electrical_Conductivity: "1.2",
+    Soil_Type: "",
+    Soil_pH: "",
+    Soil_Moisture: "",
+    Organic_Carbon: "",
+    Electrical_Conductivity: "",
 
-    Nitrogen_Level: "60",
-    Phosphorus_Level: "45",
-    Potassium_Level: "80",
+    Nitrogen_Level: "",
+    Phosphorus_Level: "",
+    Potassium_Level: "",
 
-    Crop_Type: "Cotton",
-    Crop_Growth_Stage: "Vegetative",
-    Irrigation_Type: "Canal",
+    Crop_Type: "",
+    Crop_Growth_Stage: "",
+    Irrigation_Type: "",
 
     Previous_Crop: "",
     Fertilizer_Used_Last_Season: "",
@@ -504,19 +504,20 @@ function SelectField({
         value={value}
         onChange={onChange}
       >
+        <option value="">
+          Select {label}
+        </option>
 
         {options.map((option) => (
-
           <option
             key={option}
             value={option}
           >
             {option}
           </option>
-
         ))}
-
       </select>
+
     </div>
   );
 }
