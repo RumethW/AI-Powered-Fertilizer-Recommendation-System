@@ -5,6 +5,8 @@ import HeroCarousel from "../components/CarousalSlides";
 import FertilizerForm from "../components/FertilizerForm";
 import RecommendationCard from "../components/RecommendationCard";
 import WeatherCard from "../components/WeatherCard";
+import AlternativePredictions from "../components/AlternativePredictions";
+import PredictionFactors from "../components/PredictionResult";
 
 export default function Home() {
   
@@ -51,108 +53,30 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Main Recommendation */}
             <RecommendationCard result={result} />
-            
-            {/* Top 3 including alternatives */}
+
+            {/* Alternative (Top 3) Recommendations */}
             {result.alternatives &&
               result.alternatives.length > 0 && (
-                <div className="alternatives-card">
+                <AlternativePredictions
+                  alternatives={result.alternatives}
+                />
+            )}
 
-                  <h2>
-                    📊 Top 3 Fertilizer Recommendations
-                  </h2>
-
-                  <p className="section-description">
-                    These are the top 3 fertilizer recommedations generated
-                    by our model.
-                  </p>
-
-                  <div className="alternatives-list">
-                    {result.alternatives.map(
-                      (item: any, index: number) => (
-                        <div
-                          key={index}
-                          className="alternative-item"
-                        >
-                          <div className="alternative-rank">
-                            #{index + 1}
-                          </div>
-
-                          <div className="alternative-info">
-                            <h3>{item.fertilizer}</h3>
-
-                            <div className="probability-bar">
-                              <div
-                                className="probability-fill"
-                                style={{
-                                  width: `${item.probability}%`,
-                                }}
-                              />
-                            </div>
-                          </div>
-
-                          <div className="probability-value">
-                            {item.probability}%
-                          </div>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
-              )}
-
+            {/* Weather Factors */}
             {result.weather && (
               <WeatherCard weather={result.weather} />
             )}
 
-            {/* Explainable AI */}
+            {/* Prediction Factors */}
             {result.top_factors &&
               result.top_factors.length > 0 && (
-                <div className="ai-factors-card">
-
-                  <div className="section-title">
-                    <div>
-                      <p className="section-label">
-                        EXPLAINABLE AI
-                      </p>
-
-                      <h2>
-                        🔍 Why did the AI make this recommendation?
-                      </h2>
-                    </div>
-                  </div>
-
-                  <p className="section-description">
-                    These are the three most important factors that
-                    influenced the AI model's fertilizer recommendation.
-                  </p>
-
-                  <div className="factors-grid">
-                    {result.top_factors.map(
-                      (factor: any, index: number) => (
-                        <div
-                          key={index}
-                          className="factor-card"
-                        >
-                          <div className="factor-number">
-                            {index + 1}
-                          </div>
-
-                          <div className="factor-content">
-                            <h3>{factor.feature}</h3>
-                            <p>AI Impact Score</p>
-                          </div>
-
-                          <div className="factor-impact">
-                            {factor.impact}
-                          </div>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
+                <PredictionFactors
+                  factors={result.top_factors}
+                />
               )}
-            
+
           </section>
         )}
       </section>

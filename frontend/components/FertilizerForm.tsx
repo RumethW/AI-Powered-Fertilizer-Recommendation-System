@@ -3,6 +3,7 @@
 import { useState } from "react";
 import LocationSelector from "./LocationSelector";
 import type { LocationData } from "../types/index";
+import { predictFertilizer } from "../services/api";
 
 interface FertilizerFormProps {
   setResult: (result: any) => void;
@@ -118,36 +119,19 @@ export default function FertilizerForm({
       };
 
       // Send request to backend
-      const response = await fetch(
-        "http://localhost:8000/predict",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestData),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(
-          "Failed to get fertilizer recommendation."
-        );
-      }
-
-      const result = await response.json();
+      const result = await predictFertilizer(requestData);
 
       setResult(result);
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+      } catch (err) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Something went wrong. Please try again."
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
 
   return (
     <section className="fertilizer-form-section">
@@ -443,9 +427,7 @@ export default function FertilizerForm({
   );
 }
 
-
 /* Reusable Input Field */
-
 interface InputFieldProps {
   label: string;
   name: string;
@@ -492,7 +474,6 @@ function InputField({
 
 
 /* Reusable Select Field */
-
 interface SelectFieldProps {
   label: string;
   name: string;

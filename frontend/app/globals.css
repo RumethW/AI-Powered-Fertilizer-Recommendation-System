@@ -114,13 +114,9 @@ button {
 .badge-dot {
   width: 8px;
   height: 8px;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background: #86efac;
-
   box-shadow:
     0 0 12px rgba(134, 239, 172, 0.8);
 }
@@ -185,28 +181,19 @@ button {
   position: absolute;
   top: 50%;
   z-index: 4;
-
   width: 50px;
   height: 50px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
-
   transform: translateY(-50%);
-
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
-
   background: rgba(0, 0, 0, 0.22);
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   color: white;
-
   font-size: 38px;
   line-height: 1;
 
@@ -242,13 +229,10 @@ button {
   left: 50%;
   bottom: 28px;
   z-index: 4;
-
   width: min(1100px, calc(100% - 40px));
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   transform: translateX(-50%);
 }
 
@@ -263,14 +247,10 @@ button {
 .carousel-dot {
   width: 8px;
   height: 8px;
-
   padding: 0;
-
   border: none;
   border-radius: 50%;
-
   background: rgba(255, 255, 255, 0.4);
-
   transition:
     width 0.3s ease,
     background 0.3s ease;
@@ -287,9 +267,7 @@ button {
 
 .carousel-dot-active {
   width: 30px;
-
   border-radius: 20px;
-
   background: #86efac;
 }
 
@@ -309,12 +287,9 @@ button {
 
 .fertilizer-form-section {
   padding: 32px;
-
   border: 1px solid #e1e9e3;
   border-radius: 24px;
-
   background: white;
-
   box-shadow:
     0 15px 40px rgba(16, 45, 27, 0.07);
 }
@@ -325,11 +300,8 @@ button {
 
 .form-badge {
   display: inline-block;
-
   margin: 0 0 10px;
-
   color: #16a34a;
-
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -337,20 +309,15 @@ button {
 
 .form-header h2 {
   margin: 0 0 8px;
-
   color: #17251c;
-
   font-size: clamp(28px, 4vw, 38px);
   letter-spacing: -0.03em;
 }
 
 .form-header > p:last-child {
   max-width: 700px;
-
   margin: 0;
-
   color: #718077;
-
   font-size: 14px;
   line-height: 1.6;
 }
@@ -358,12 +325,9 @@ button {
 /* Form Cards */
 .form-card {
   padding: 28px;
-
   border: 1px solid #e5ebe6;
   border-radius: 20px;
-
   background: #fbfdfb;
-
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -371,7 +335,6 @@ button {
 
 .form-card:hover {
   border-color: #cce5d3;
-
   box-shadow:
     0 8px 25px rgba(22, 101, 52, 0.05);
 }
@@ -547,7 +510,7 @@ button {
 /* Footer */
 .footer {
   padding: 20px   20px;
-  background: #0b542c;
+  background: #106135;
   color: white;
   text-align: center;
 }
@@ -582,20 +545,19 @@ button {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 58px;
+  min-height: 48px;
   margin-top: 8px;
   border: 0;
   border-radius: 14px;
-  background:
-    linear-gradient(
-      135deg,
-      #166534,
-      #15803d
-    );
+  background: linear-gradient(
+    135deg,
+    #065f46,
+  #16a34a
+  );
 
   color: white;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   box-shadow:
     0 10px 25px rgba(22, 101, 52, 0.22);
   transition:
@@ -618,9 +580,7 @@ button {
   outline-offset: 3px;
 }
 
-
 /* Loading Card */
-
 .loading-card {
   display: flex;
   align-items: center;
@@ -669,7 +629,6 @@ button {
 
 
 /* Results Section */
-
 .results-section {
   display: grid;
   gap: 22px;
@@ -805,12 +764,11 @@ button {
   color: #166534;
 }
 
-
 /* Weather card */
 
 .weather-card h2 {
   margin-top: 0;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   font-size: 22px;
 }
 
@@ -821,7 +779,7 @@ button {
 }
 
 .weather-item {
-  padding: 22px;
+  padding: 12px;
   text-align: center;
   border: 1px solid #e0eee4;
   border-radius: 16px;
