@@ -5,7 +5,7 @@ from weather_service import get_weather
 from model_service import predict_fertilizer
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(Title="AI Fertilizer Recommendation API")
+app = FastAPI(title="AI Fertilizer Recommendation API")
 
 @app.get("/")
 def home():
@@ -54,8 +54,8 @@ def predict(request: FertilizerRequest):
 # Allow Next.js frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
