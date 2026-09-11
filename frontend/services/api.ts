@@ -4,7 +4,7 @@ import {
 } from "@/types";
 
 // API URL for the backend server
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 // Function to send a fertilizer prediction request to the backend
 export async function predictFertilizer(
