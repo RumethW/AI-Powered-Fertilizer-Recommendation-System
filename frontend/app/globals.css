@@ -918,3 +918,266 @@ button {
   font-size: 14px;
   font-weight: 800;
 }
+
+.required {
+  color: red;
+  margin-left: 3px;
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+
+  .fertilizer-form-section {
+    padding: 28px;
+  }
+
+  .form-grid.three-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .factors-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* Mobile*/
+@media (max-width: 650px) {
+
+  /* Carousal Slides */
+  .hero-carousel {
+    height: 620px;
+  }
+
+  .hero-content {
+    width: calc(100% - 40px);
+    align-items: center;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    margin-top: 20px;
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    max-width: 500px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-features {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+  }
+
+  .hero-features > div {
+    padding: 8px 11px;
+  }
+
+  .hero-features p {
+    font-size: 12px;
+  }
+
+
+  /* Carousel arrows */
+
+  .carousel-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 30px;
+  }
+
+  .carousel-arrow-left {
+    left: 15px;
+  }
+
+  .carousel-arrow-right {
+    right: 15px;
+  }
+
+  .carousel-controls {
+    bottom: 20px;
+    justify-content: center;
+  }
+
+
+  /* Main */
+
+  .container {
+    width: calc(100% - 20px);
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+
+  /* Form */
+
+  .fertilizer-form-section {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .form-card,
+  .recommendation-card,
+  .weather-card,
+  .ai-factors-card,
+  .alternatives-card {
+    padding: 20px;
+  }
+
+  .form-grid,
+  .form-grid.three-columns {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Location */
+
+  .location-search-row {
+    flex-direction: column;
+  }
+
+  .location-search-button {
+    width: 100%;
+    height: 48px;
+  }
+
+  .current-location-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Selected location */
+
+  .selected-location-card {
+    align-items: flex-start;
+  }
+
+  .coordinates {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  /* Weather */
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Recommendation */
+  .recommendation-card h2 {
+    font-size: 38px;
+  }
+
+
+  /* Top 3 */
+  .alternative-item {
+    grid-template-columns: 38px 1fr 60px;
+
+    gap: 10px;
+  }
+
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .hero-carousel {
+    height: 640px;
+  }
+
+  .hero-content {
+    width: calc(100% - 50px);
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-features {
+    margin-top: 22px;
+  }
+
+  .hero-features > div {
+    padding: 7px 9px;
+  }
+
+  .hero-features > div:last-child {
+    display: none;
+  }
+
+  .carousel-arrow {
+    top: auto;
+    bottom: 15px;
+    transform: none;
+  }
+
+  .carousel-arrow:hover {
+    transform: scale(1.05);
+  }
+
+  .carousel-arrow-left {
+    left: 20px;
+  }
+
+  .carousel-arrow-right {
+    right: 20px;
+  }
+
+  .carousel-controls {
+    bottom: 23px;
+  }
+
+  .form-header h2 {
+    font-size: 27px;
+  }
+
+  .recommendation-card h2 {
+    font-size: 34px;
+  }
+
+  .alternative-item {
+    grid-template-columns: 32px 1fr 55px;
+  }
+
+}
+
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-slide {
+    transition: opacity 0.3s ease;
+    transform: none;
+  }
+
+  .hero-slide-active {
+    transform: none;
+  }
+
+  .carousel-arrow,
+  .submit-button {
+    transition: none;
+  }
+
+  .loading-icon {
+    animation: none;
+  }
+
+}

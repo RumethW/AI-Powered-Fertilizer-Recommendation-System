@@ -378,6 +378,7 @@ export default function FertilizerForm({
               onChange={handleChange}
               type="text"
               placeholder="Optional"
+              required={false}
             />
 
             <InputField
@@ -388,6 +389,7 @@ export default function FertilizerForm({
               }
               onChange={handleChange}
               placeholder="Optional"
+              required={false}
             />
 
             <InputField
@@ -396,6 +398,7 @@ export default function FertilizerForm({
               value={formData.Yield_Last_Season}
               onChange={handleChange}
               placeholder="Optional"
+              required={false}
             />
 
           </div>
@@ -437,6 +440,7 @@ interface InputFieldProps {
   ) => void;
   type?: string;
   placeholder?: string;
+  required?: boolean;
 }
 
 function InputField({
@@ -446,12 +450,13 @@ function InputField({
   onChange,
   type = "number",
   placeholder,
+  required = true,
 }: InputFieldProps) {
   return (
     <div className="input-group">
 
       <label htmlFor={name}>
-        {label}
+        {label} {required && <span className="required">*</span>}
       </label>
 
       <input
@@ -461,13 +466,13 @@ function InputField({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required={required}
         step={
           type === "number"
             ? "any"
             : undefined
         }
       />
-
     </div>
   );
 }
@@ -482,6 +487,7 @@ interface SelectFieldProps {
   onChange: (
     e: React.ChangeEvent<HTMLSelectElement>
   ) => void;
+  required?: boolean;
 }
 
 function SelectField({
@@ -490,12 +496,13 @@ function SelectField({
   value,
   options,
   onChange,
+  required = true,
 }: SelectFieldProps) {
   return (
     <div className="input-group">
 
       <label htmlFor={name}>
-        {label}
+        {label} {required && <span className="required">*</span>}
       </label>
 
       <select
@@ -503,6 +510,7 @@ function SelectField({
         name={name}
         value={value}
         onChange={onChange}
+        required={required}
       >
         <option value="">
           Select {label}
